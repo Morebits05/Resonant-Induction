@@ -6,8 +6,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import resonant.lib.prefab.ProxyBase;
-import resonantinduction.electrical.encoder.TileEncoder;
-import resonantinduction.electrical.encoder.gui.ContainerEncoder;
 import resonantinduction.electrical.multimeter.ContainerMultimeter;
 import resonantinduction.electrical.multimeter.PartMultimeter;
 import universalelectricity.api.vector.Vector3;
@@ -28,10 +26,6 @@ public class CommonProxy extends ProxyBase
 			{
 				return new ContainerMultimeter(player.inventory, ((PartMultimeter) part));
 			}
-		}
-		else if (tileEntity instanceof TileEncoder)
-		{
-			return new ContainerEncoder(player.inventory, (TileEncoder) tileEntity);
 		}
 
 		return null;

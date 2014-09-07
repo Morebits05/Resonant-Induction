@@ -8,8 +8,6 @@ import resonant.lib.render.item.GlobalItemRenderer;
 import resonantinduction.electrical.battery.RenderBattery;
 import resonantinduction.electrical.battery.TileBattery;
 import resonantinduction.electrical.charger.RenderCharger;
-import resonantinduction.electrical.encoder.TileEncoder;
-import resonantinduction.electrical.encoder.gui.GuiEncoderInventory;
 import resonantinduction.electrical.laser.gun.RenderMiningLaserGun;
 import resonantinduction.electrical.levitator.RenderLevitator;
 import resonantinduction.electrical.multimeter.GuiMultimeter;
@@ -64,10 +62,6 @@ public class ClientProxy extends CommonProxy
 			{
 				return new GuiMultimeter(player.inventory, (PartMultimeter) part);
 			}
-		}
-		else if (tileEntity instanceof TileEncoder)
-		{
-			return new GuiEncoderInventory(player.inventory, (TileEncoder) tileEntity);
 		}
 
 		return null;
