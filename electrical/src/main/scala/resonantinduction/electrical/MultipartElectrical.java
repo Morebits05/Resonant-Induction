@@ -1,8 +1,5 @@
 package resonantinduction.electrical;
 
-import resonantinduction.electrical.charger.PartCharger;
-import resonantinduction.electrical.itemrailing.PartRailing;
-import resonantinduction.electrical.levitator.PartLevitator;
 import resonantinduction.electrical.multimeter.PartMultimeter;
 import resonantinduction.electrical.transformer.PartTransformer;
 import resonantinduction.electrical.wire.flat.PartFlatSwitchWire;
@@ -46,14 +43,8 @@ public class MultipartElectrical implements IPartFactory
 			return new PartMultimeter();
 		else if (name.equals("resonant_induction_transformer"))
 			return new PartTransformer();
-		else if (name.equals("resonant_induction_charger"))
-			return new PartCharger();
-		else if (name.equals("resonant_induction_levitator"))
-			return new PartLevitator();
 		else if (name.equals("resonant_induction_quantum_glyph"))
 			return new PartQuantumGlyph();
-		else if (name.equals("resonant_induction_itemrailing"))
-			return new PartRailing();
 
 		return null;
 	}

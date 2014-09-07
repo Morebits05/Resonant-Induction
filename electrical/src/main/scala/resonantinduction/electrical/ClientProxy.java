@@ -3,13 +3,9 @@ package resonantinduction.electrical;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import net.minecraftforge.client.MinecraftForgeClient;
 import resonant.lib.render.item.GlobalItemRenderer;
 import resonantinduction.electrical.battery.RenderBattery;
 import resonantinduction.electrical.battery.TileBattery;
-import resonantinduction.electrical.charger.RenderCharger;
-import resonantinduction.electrical.laser.gun.RenderMiningLaserGun;
-import resonantinduction.electrical.levitator.RenderLevitator;
 import resonantinduction.electrical.multimeter.GuiMultimeter;
 import resonantinduction.electrical.multimeter.PartMultimeter;
 import resonantinduction.electrical.multimeter.RenderMultimeter;
@@ -36,10 +32,10 @@ public class ClientProxy extends CommonProxy
 		GlobalItemRenderer.register(Electrical.blockBattery.blockID, RenderBattery.INSTANCE);
 		GlobalItemRenderer.register(Electrical.itemMultimeter.itemID, RenderMultimeter.INSTANCE);
 		GlobalItemRenderer.register(Electrical.itemTransformer.itemID, RenderTransformer.INSTANCE);
-		GlobalItemRenderer.register(Electrical.itemCharger.itemID, RenderCharger.INSTANCE);
-		GlobalItemRenderer.register(Electrical.itemLevitator.itemID, RenderLevitator.INSTANCE);
+		//GlobalItemRenderer.register(Electrical.itemCharger.itemID, RenderCharger.INSTANCE);
+		//GlobalItemRenderer.register(Electrical.itemLevitator.itemID, RenderLevitator.INSTANCE);
 		GlobalItemRenderer.register(Electrical.itemQuantumGlyph.itemID, RenderQuantumGlyph.INSTANCE);
-		MinecraftForgeClient.registerItemRenderer(Electrical.itemLaserGun.itemID, new RenderMiningLaserGun());
+		//MinecraftForgeClient.registerItemRenderer(Electrical.itemLaserGun.itemID, new RenderMiningLaserGun());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileTesla.class, new RenderTesla());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileBattery.class, new RenderBattery());
 	}

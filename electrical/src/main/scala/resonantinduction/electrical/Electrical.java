@@ -19,15 +19,11 @@ import resonantinduction.core.resource.ItemResourcePart;
 import resonantinduction.electrical.battery.BlockBattery;
 import resonantinduction.electrical.battery.ItemBlockBattery;
 import resonantinduction.electrical.battery.TileBattery;
-import resonantinduction.electrical.charger.ItemCharger;
 import resonantinduction.electrical.generator.BlockMotor;
 import resonantinduction.electrical.generator.TileMotor;
 import resonantinduction.electrical.generator.solar.TileSolarPanel;
 import resonantinduction.electrical.generator.thermopile.BlockThermopile;
 import resonantinduction.electrical.generator.thermopile.TileThermopile;
-import resonantinduction.electrical.itemrailing.ItemItemRailing;
-import resonantinduction.electrical.laser.gun.ItemMiningLaser;
-import resonantinduction.electrical.levitator.ItemLevitator;
 import resonantinduction.electrical.multimeter.ItemMultimeter;
 import resonantinduction.electrical.tesla.BlockTesla;
 import resonantinduction.electrical.tesla.TileTesla;
@@ -74,13 +70,8 @@ public class Electrical
     public static Item itemWire;
     public static Item itemMultimeter;
     public static Item itemTransformer;
-    public static Item itemCharger;
     public static Block blockTesla;
     public static Block blockBattery;
-    public static Block blockEncoder;
-
-    // Railings
-    public static Item itemRailing;
 
     // Generators
     public static Block blockSolarPanel;
@@ -89,16 +80,11 @@ public class Electrical
 
     // Transport
     public static Item itemLevitator;
-    public static Block blockArmbot;
-    public static Item itemDisk;
     public static Item itemInsulation;
 
     // Quantum
     public static Block blockQuantumGate;
     public static Item itemQuantumGlyph;
-
-    // Tools
-    public static Item itemLaserGun;
 
     public ProxyHandler modproxies;
 
@@ -113,14 +99,13 @@ public class Electrical
         itemWire = contentRegistry.createItem(ItemWire.class);
         itemMultimeter = contentRegistry.createItem(ItemMultimeter.class);
         itemTransformer = contentRegistry.createItem(ItemTransformer.class);
-        itemCharger = contentRegistry.createItem(ItemCharger.class);
         blockTesla = contentRegistry.createTile(BlockTesla.class, TileTesla.class);
         blockBattery = contentRegistry.createBlock(BlockBattery.class, ItemBlockBattery.class, TileBattery.class);
        
         // Transport
-        itemLevitator = contentRegistry.createItem(ItemLevitator.class);
+        //itemLevitator = contentRegistry.createItem(ItemLevitator.class);
         itemInsulation = contentRegistry.createItem("insulation", ItemResourcePart.class);
-        itemLaserGun = contentRegistry.createItem("laserDrill", ItemMiningLaser.class);
+        //itemLaserGun = contentRegistry.createItem("laserDrill", ItemMiningLaser.class);
 
         // Generator
         blockSolarPanel = contentRegistry.newBlock(TileSolarPanel.class);
@@ -195,22 +180,22 @@ public class Electrical
         GameRegistry.addRecipe(new ShapedOreRecipe(EnumWireMaterial.SUPERCONDUCTOR.getWire(3), "MMM", 'M', "ingotSuperconductor"));
         GameRegistry.addRecipe(new ShapedOreRecipe(EnumWireMaterial.SUPERCONDUCTOR.getWire(3), "MMM", "MEM", "MMM", 'M', Item.ingotGold, 'E', Item.eyeOfEnder));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(itemCharger, "WWW", "ICI", 'W', "wire", 'I', UniversalRecipe.PRIMARY_METAL.get(), 'C', UniversalRecipe.CIRCUIT_T1.get()));
+        //GameRegistry.addRecipe(new ShapedOreRecipe(itemCharger, "WWW", "ICI", 'W', "wire", 'I', UniversalRecipe.PRIMARY_METAL.get(), 'C', UniversalRecipe.CIRCUIT_T1.get()));
         GameRegistry.addRecipe(new ShapedOreRecipe(itemTransformer, "WWW", "WWW", "III", 'W', "wire", 'I', UniversalRecipe.PRIMARY_METAL.get()));
         //GameRegistry.addRecipe(new ShapedOreRecipe(itemLevitator, " G ", "SDS", "SWS", 'W', "wire", 'G', Block.glass, 'D', Block.blockDiamond, 'S', UniversalRecipe.PRIMARY_METAL.get()));
 
         /** Quantum Gates */
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemQuantumGlyph, 1, 0), " CT", "LBL", "TCT", 'B', Block.blockDiamond, 'L', itemLevitator, 'C', itemCharger, 'T', blockTesla));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemQuantumGlyph, 1, 1), "TCT", "LBL", " CT", 'B', Block.blockDiamond, 'L', itemLevitator, 'C', itemCharger, 'T', blockTesla));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemQuantumGlyph, 1, 2), "TC ", "LBL", "TCT", 'B', Block.blockDiamond, 'L', itemLevitator, 'C', itemCharger, 'T', blockTesla));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemQuantumGlyph, 1, 3), "TCT", "LBL", "TC ", 'B', Block.blockDiamond, 'L', itemLevitator, 'C', itemCharger, 'T', blockTesla));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemQuantumGlyph, 1, 0), " CT", "LBL", "TCT", 'B', Block.blockDiamond, 'L', UniversalRecipe.CIRCUIT_T3.get(), 'C', UniversalRecipe.CIRCUIT_T3.get(), 'T', blockTesla));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemQuantumGlyph, 1, 1), "TCT", "LBL", " CT", 'B', Block.blockDiamond, 'L', UniversalRecipe.CIRCUIT_T3.get(), 'C', UniversalRecipe.CIRCUIT_T3.get(), 'T', blockTesla));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemQuantumGlyph, 1, 2), "TC ", "LBL", "TCT", 'B', Block.blockDiamond, 'L', UniversalRecipe.CIRCUIT_T3.get(), 'C', UniversalRecipe.CIRCUIT_T3.get(), 'T', blockTesla));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(itemQuantumGlyph, 1, 3), "TCT", "LBL", "TC ", 'B', Block.blockDiamond, 'L', UniversalRecipe.CIRCUIT_T3.get(), 'C', UniversalRecipe.CIRCUIT_T3.get(), 'T', blockTesla));
 
         /** Generators **/
         GameRegistry.addRecipe(new ShapedOreRecipe(blockSolarPanel, "CCC", "WWW", "III", 'W', "wire", 'C', Item.coal, 'I', UniversalRecipe.PRIMARY_METAL.get()));
         GameRegistry.addRecipe(new ShapedOreRecipe(blockMotor, "SRS", "SMS", "SWS", 'W', "wire", 'R', Item.redstone, 'M', Block.blockIron, 'S', UniversalRecipe.PRIMARY_METAL.get()));
         GameRegistry.addRecipe(new ShapedOreRecipe(blockThermopile, "ORO", "OWO", "OOO", 'W', "wire", 'O', Block.obsidian, 'R', Item.redstone));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(itemLaserGun, "RDR", "RDR", "ICB", 'R', Item.redstone, 'D', Item.diamond, 'I', Item.ingotGold, 'C', UniversalRecipe.CIRCUIT_T2.get(), 'B', ItemBlockBattery.setTier(new ItemStack(blockBattery, 1, 0), (byte) 0)));
+        //GameRegistry.addRecipe(new ShapedOreRecipe(itemLaserGun, "RDR", "RDR", "ICB", 'R', Item.redstone, 'D', Item.diamond, 'I', Item.ingotGold, 'C', UniversalRecipe.CIRCUIT_T2.get(), 'B', ItemBlockBattery.setTier(new ItemStack(blockBattery, 1, 0), (byte) 0)));
 
         /** Wire Compatiblity **/
         if (Loader.isModLoaded("IC2"))
