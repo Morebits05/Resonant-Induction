@@ -476,7 +476,7 @@ public class TileReactorCell extends TileInventory implements IMultiBlockStructu
 
     private void meltDown()
     {
-        if (!worldObj.isRemote)
+        if (worldObj != null && !worldObj.isRemote)
         {
             // Turn the reactor cell into a block of lava to imply it melted.
             this.worldObj.setBlock(Block.lavaStill.blockID, 0, this.xCoord, this.yCoord, this.zCoord, 3);
