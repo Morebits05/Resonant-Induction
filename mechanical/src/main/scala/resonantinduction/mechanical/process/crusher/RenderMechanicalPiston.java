@@ -33,10 +33,14 @@ public class RenderMechanicalPiston extends TileEntitySpecialRenderer
 
         if (tile.worldObj != null)
         {
-            if (tile.getDirection() != ForgeDirection.UP && tile.getDirection() != ForgeDirection.DOWN)
+            if (tile.getDirection() == ForgeDirection.NORTH || tile.getDirection() == ForgeDirection.SOUTH)
+            {
                 RenderUtility.rotateBlockBasedOnDirection(tile.getDirection().getOpposite());
+            }
             else
+            {
                 RenderUtility.rotateBlockBasedOnDirection(tile.getDirection());
+            }
         }
 
         RenderUtility.bind(TEXTURE);
