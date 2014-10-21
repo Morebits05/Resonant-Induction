@@ -10,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import resonant.lib.prefab.block.BlockTile;
 import resonantinduction.core.Reference;
+import net.minecraft.world.*;
+import net.minecraft.tileentity.*;
 
 /**
  * A block used to build machines or decoration.
