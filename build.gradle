@@ -61,8 +61,8 @@ allprojects {
             url = "http://files.minecraftforge.net/maven"
         }
         ivy {
-			name 'FMP'
-			artifactPattern "http://files.minecraftforge.net/[module]/[module]-dev-[revision].[ext]"
+	name 'FMP'
+	artifactPattern "http://files.minecraftforge.net/[module]/[module]-dev-[revision].[ext]"
         }
         maven {
 			name "chickenbones"
